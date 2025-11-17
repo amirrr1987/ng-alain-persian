@@ -1,32 +1,33 @@
 <page-header [title]="'高级表单'">
-  高级表单常见于一次性输入和提交大批量数据的场景。（示例采用响应式表单，也可使用模板驱动方式）
+  فرم‌های پیشرفته معمولاً برای وارد کردن و ارسال همزمان حجم زیادی از داده‌ها استفاده می‌شوند. (این مثال از فرم واکنشی استفاده می‌کند، اما
+  می‌توانید از فرم مبتنی بر قالب نیز استفاده کنید)
 </page-header>
 <form nz-form [formGroup]="form" (ngSubmit)="_submitForm()" [nzLayout]="'vertical'">
   <nz-card [nzBordered]="false" nzTitle="仓库管理">
     <nz-row nzGutter="16">
       <nz-col nzLg="6" nzMd="12" nzSm="24">
         <nz-form-item>
-          <nz-form-label nzFor="name">仓库名</nz-form-label>
-          <nz-form-control nzErrorTip="请输入仓库名称">
-            <input nz-input formControlName="name" id="name" placeholder="请输入仓库名称" />
+          <nz-form-label nzFor="name">{{ 'form.advanced.name' | i18n }}</nz-form-label>
+          <nz-form-control nzErrorTip="لطفاً نام انبار را وارد کنید">
+            <input nz-input formControlName="name" id="name" placeholder="لطفاً نام انبار را وارد کنید" />
           </nz-form-control>
         </nz-form-item>
       </nz-col>
       <nz-col [nzXl]="{ span: 6, offset: 2 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" nzSm="24">
         <nz-form-item>
           <nz-form-label>仓库域名</nz-form-label>
-          <nz-form-control nzErrorTip="请输入仓库域名">
+          <nz-form-control nzErrorTip="لطفاً آدرس انبار را وارد کنید">
             <nz-input-group nzAddOnBefore="http://" nzAddOnAfter=".com">
-              <input nz-input formControlName="url" placeholder="请输入" />
+              <input nz-input formControlName="url" placeholder="لطفاً آدرس انبار را وارد کنید" />
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>
       </nz-col>
       <nz-col [nzXl]="{ span: 8, offset: 2 }" [nzLg]="{ span: 10 }" [nzMd]="{ span: 24 }" nzSm="24">
         <nz-form-item>
-          <nz-form-label>仓库管理员</nz-form-label>
-          <nz-form-control nzErrorTip="请选择管理员">
-            <nz-select formControlName="owner" [nzPlaceHolder]="'请选择管理员'" [nzShowSearch]="true">
+          <nz-form-label>مدیر انبار</nz-form-label>
+          <nz-form-control nzErrorTip="لطفاً مدیر انبار را انتخاب کنید">
+            <nz-select formControlName="owner" [nzPlaceHolder]="'لطفاً مدیر انبار را انتخاب کنید'" [nzShowSearch]="true">
               @for (i of users; track $index) {
                 <nz-option [nzLabel]="i.label" [nzValue]="i.value" />
               }
@@ -39,8 +40,8 @@
       <nz-col nzLg="6" nzMd="12" nzSm="24">
         <nz-form-item>
           <nz-form-label>审批员</nz-form-label>
-          <nz-form-control nzErrorTip="请选择审批员">
-            <nz-select formControlName="approver" [nzPlaceHolder]="'请选择管理员'" [nzShowSearch]="true">
+          <nz-form-control nzErrorTip="لطفاً مدیر انبار را انتخاب کنید">
+            <nz-select formControlName="approver" [nzPlaceHolder]="'لطفاً مدیر انبار را انتخاب کنید'" [nzShowSearch]="true">
               @for (i of users; track $index) {
                 <nz-option [nzLabel]="i.label" [nzValue]="i.value" />
               }
@@ -50,7 +51,7 @@
       </nz-col>
       <nz-col [nzXl]="{ span: 6, offset: 2 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" nzSm="24">
         <nz-form-item>
-          <nz-form-label>生效日期</nz-form-label>
+          <nz-form-label>تاریخ اعمال</nz-form-label>
           <nz-form-control>
             <nz-range-picker formControlName="date_range" [style]="{ width: '100%' }" />
           </nz-form-control>
@@ -58,11 +59,11 @@
       </nz-col>
       <nz-col [nzXl]="{ span: 8, offset: 2 }" [nzLg]="{ span: 10 }" [nzMd]="{ span: 24 }" nzSm="24">
         <nz-form-item>
-          <nz-form-label>仓库类型</nz-form-label>
-          <nz-form-control nzErrorTip="请选择仓库类型">
-            <nz-select formControlName="type" [nzShowSearch]="true" [nzPlaceHolder]="'请选择仓库类型'">
-              <nz-option [nzLabel]="'私密'" [nzValue]="'private'" />
-              <nz-option [nzLabel]="'公开'" [nzValue]="'public'" />
+          <nz-form-label>نوع انبار</nz-form-label>
+          <nz-form-control nzErrorTip="لطفاً نوع انبار را انتخاب کنید">
+            <nz-select formControlName="type" [nzShowSearch]="true" [nzPlaceHolder]="'لطفاً نوع انبار را انتخاب کنید'">
+              <nz-option [nzLabel]="'مخفی'" [nzValue]="'private'" />
+              <nz-option [nzLabel]="'عمومی'" [nzValue]="'public'" />
             </nz-select>
           </nz-form-control>
         </nz-form-item>
@@ -74,24 +75,24 @@
       <nz-col nzLg="6" nzMd="12" nzSm="24">
         <nz-form-item>
           <nz-form-label>任务名</nz-form-label>
-          <nz-form-control nzErrorTip="请输入任务名">
-            <input nz-input formControlName="name2" placeholder="请输入任务名" />
+          <nz-form-control nzErrorTip="لطفاً نام تسک را وارد کنید">
+            <input nz-input formControlName="name2" placeholder="لطفاً نام تسک را وارد کنید" />
           </nz-form-control>
         </nz-form-item>
       </nz-col>
       <nz-col [nzXl]="{ span: 6, offset: 2 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" nzSm="24">
         <nz-form-item>
-          <nz-form-label>任务描述</nz-form-label>
-          <nz-form-control nzErrorTip="请输入任务描述">
-            <textarea nz-input formControlName="summary" [nzAutosize]="true" placeholder="请输入任务描述"></textarea>
+          <nz-form-label>توضیحات تسک</nz-form-label>
+          <nz-form-control nzErrorTip="لطفاً توضیحات تسک را وارد کنید">
+            <textarea nz-input formControlName="summary" [nzAutosize]="true" placeholder="لطفاً توضیحات تسک را وارد کنید"></textarea>
           </nz-form-control>
         </nz-form-item>
       </nz-col>
       <nz-col [nzXl]="{ span: 8, offset: 2 }" [nzLg]="{ span: 10 }" [nzMd]="{ span: 24 }" nzSm="24">
         <nz-form-item>
-          <nz-form-label>执行人</nz-form-label>
-          <nz-form-control nzErrorTip="请选择执行人">
-            <nz-select formControlName="owner2" [nzPlaceHolder]="'请选择执行人'" [nzShowSearch]="true">
+          <nz-form-label>اجرا کننده</nz-form-label>
+          <nz-form-control nzErrorTip="لطفاً اجرا کننده را انتخاب کنید">
+            <nz-select formControlName="owner2" [nzPlaceHolder]="'لطفاً اجرا کننده را انتخاب کنید'" [nzShowSearch]="true">
               @for (i of users; track $index) {
                 <nz-option [nzLabel]="i.label" [nzValue]="i.value" />
               }
@@ -103,9 +104,9 @@
     <nz-row nzGutter="16">
       <nz-col nzLg="6" nzMd="12" nzSm="24">
         <nz-form-item>
-          <nz-form-label>责任人</nz-form-label>
-          <nz-form-control nzErrorTip="请选择责任人">
-            <nz-select formControlName="approver2" [nzPlaceHolder]="'请选择责任人'" [nzShowSearch]="true">
+          <nz-form-label>مسئول</nz-form-label>
+            <nz-form-control nzErrorTip="لطفاً مسئول را انتخاب کنید">
+            <nz-select formControlName="approver2" [nzPlaceHolder]="'لطفاً مسئول را انتخاب کنید'" [nzShowSearch]="true">
               @for (i of users; track $index) {
                 <nz-option [nzLabel]="i.label" [nzValue]="i.value" />
               }
@@ -115,7 +116,7 @@
       </nz-col>
       <nz-col [nzXl]="{ span: 6, offset: 2 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" nzSm="24">
         <nz-form-item>
-          <nz-form-label>生效时间</nz-form-label>
+          <nz-form-label>تاریخ اعمال</nz-form-label>
           <nz-form-control>
             <nz-time-picker formControlName="time" />
           </nz-form-control>
@@ -123,11 +124,11 @@
       </nz-col>
       <nz-col [nzXl]="{ span: 8, offset: 2 }" [nzLg]="{ span: 10 }" [nzMd]="{ span: 24 }" nzSm="24">
         <nz-form-item>
-          <nz-form-label>任务类型</nz-form-label>
+          <nz-form-label>نوع تسک</nz-form-label>
           <nz-form-control nzErrorTip="请选择任务类型">
-            <nz-select formControlName="type2" [nzShowSearch]="true" [nzPlaceHolder]="'请选择任务类型'">
-              <nz-option [nzLabel]="'私密'" [nzValue]="'private'" />
-              <nz-option [nzLabel]="'公开'" [nzValue]="'public'" />
+            <nz-select formControlName="type2" [nzShowSearch]="true" [nzPlaceHolder]="'لطفاً نوع تسک را انتخاب کنید'">
+              <nz-option [nzLabel]="'مخفی'" [nzValue]="'private'" />
+              <nz-option [nzLabel]="'عمومی'" [nzValue]="'public'" />
             </nz-select>
           </nz-form-control>
         </nz-form-item>
@@ -138,10 +139,10 @@
     <nz-table formArrayName="items" [nzData]="items.value" [nzShowPagination]="false">
       <thead>
         <tr>
-          <th>成员姓名</th>
-          <th>工号</th>
-          <th>所属部门</th>
-          <th>操作</th>
+          <th>نام</th>
+          <th>شماره کاربری</th>   
+          <th>قسمت مربوطه</th>
+          <th>عملیات</th>
         </tr>
       </thead>
       <tbody>
@@ -176,7 +177,7 @@
                 {{ v.department }}
               } @else {
                 <nz-form-item>
-                  <nz-form-control nzErrorTip="请输入所属部门">
+                  <nz-form-control nzErrorTip="{{ 'error.required' | i18n }}">
                     <input nz-input formControlName="department" placeholder="请输入所属部门" />
                   </nz-form-control>
                 </nz-form-item>
@@ -184,13 +185,13 @@
             </td>
             <td>
               @if (isView) {
-                <a (click)="edit(i)">编辑</a>
+                <a (click)="edit(i)">ویرایش</a>
                 <nz-divider nzType="vertical" />
-                <a nz-popconfirm nzPopconfirmTitle="是否要删除此行？" (nzOnConfirm)="del(i)">删除</a>
+                <a nz-popconfirm nzPopconfirmTitle="آیا می خواهید این سطر را حذف کنید؟" (nzOnConfirm)="del(i)">حذف</a>
               } @else {
-                <a (click)="save(i)">保存</a>
+                <a (click)="save(i)">ذخیره</a>
                 <nz-divider nzType="vertical" />
-                <a nz-popconfirm nzPopconfirmTitle="是否要取消操作？" (nzOnConfirm)="cancel(i)">取消</a>
+                <a nz-popconfirm nzPopconfirmTitle="آیا می خواهید این عمل را لغو کنید؟" (nzOnConfirm)="cancel(i)">لغو</a>
               }
             </td>
           </tr>
@@ -200,11 +201,11 @@
     @if (editIndex === -1) {
       <button nz-button [nzType]="'dashed'" (click)="add()" nzBlock class="mt-md">
         <i nz-icon nzType="plus"></i>
-        <span>新增成员</span>
+        <span>اضافه کردن عضو</span>
       </button>
     }
   </nz-card>
   <footer-toolbar errorCollect>
-    <button nz-button type="primary" nzType="primary">提交</button>
+    <button nz-button type="primary" nzType="primary">ارسال</button>
   </footer-toolbar>
 </form>

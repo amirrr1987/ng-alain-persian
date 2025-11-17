@@ -37,7 +37,7 @@ export class AdvancedFormComponent implements OnInit {
   });
   users: Array<{ value: string; label: string }> = [
     { value: 'xiao', label: '付晓晓' },
-    { value: 'mao', label: '周毛毛' }
+    { value: 'mao', label: 'محمد حسین حسینی' }
   ];
 
   ngOnInit(): void {
@@ -45,19 +45,19 @@ export class AdvancedFormComponent implements OnInit {
       {
         key: '1',
         workId: '00001',
-        name: 'John Brown',
+        name: 'محمد حسین حسینی',
         department: 'New York No. 1 Lake Park'
       },
       {
         key: '2',
         workId: '00002',
-        name: 'Jim Green',
+        name: 'علی حسین حسینی',
         department: 'London No. 1 Lake Park'
       },
       {
         key: '3',
         workId: '00003',
-        name: 'Joe Black',
+        name: 'محمد حسین حسینی',
         department: 'Sidney No. 1 Lake Park'
       }
     ];

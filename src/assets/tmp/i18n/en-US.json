@@ -149,5 +149,16 @@
   "validation.title.required": "Please enter a title",
   "validation.date.required": "Please select the start and end date",
   "validation.goal.required": "Please enter a description of the goal",
-  "validation.standard.required": "Please enter a metric"
+  "validation.standard.required": "Please enter a metric",
+  "error.required": "Please enter",
+  "form.advanced.name": "Warehouse Name",
+  "form.advanced.url": "Warehouse URL",
+  "form.advanced.owner": "Warehouse Owner",
+  "form.advanced.approver": "Warehouse Approver",
+  "form.advanced.date_range": "Date Range",
+  "form.advanced.type": "Warehouse Type",
+  "form.advanced.name2": "Task Name",
+  "form.advanced.summary": "Task Summary",
+  "form.advanced.owner2": "Task Owner",
+  "form.advanced.approver2": "Task Approver"
 }
